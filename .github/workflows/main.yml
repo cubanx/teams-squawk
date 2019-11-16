@@ -1,0 +1,11 @@
+name: Teams Squawk
+on: ["push","release"]
+jobs:
+  build:
+    name: Send To Teams Channel
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ./action
+      env:
+        TEAMS_WEBHOOK_URL: "This be my hook a dook"

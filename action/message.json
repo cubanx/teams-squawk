@@ -1,0 +1,48 @@
+{
+  "@type": "MessageCard",
+  "@context": "http://schema.org/extensions",
+  "themeColor": "00E03C",
+  "summary": "Package Published",
+  "sections": [
+    {
+      "activityTitle": "Package Published",
+      "facts": [
+        {
+          "name": "Project",
+          "value": "[${projectName}](${rootUrl}/project.html?projectId=${projectId})"
+        },
+        {
+          "name": "Configuration",
+          "value": "[${buildName}](${rootUrl}/viewType.html?buildTypeId=${buildExternalTypeId})"
+        },
+        {
+          "name": "Build",
+          "value": "[#${buildNumber}](${buildStatusUrl})"
+        }
+      ],
+      "markdown": true
+    }
+  ],
+  "potentialAction": [
+    {
+      "@type": "OpenUri",
+      "name": "View Build Artifacts",
+      "targets": [
+        {
+          "os": "default",
+          "uri": "${buildStatusUrl}&tab=artifacts"
+        }
+      ]
+    },
+    {
+      "@type": "OpenUri",
+      "name": "View Build Log",
+      "targets": [
+        {
+          "os": "default",
+          "uri": "${buildStatusUrl}&tab=buildLog"
+        }
+      ]
+    }
+  ]
+}
